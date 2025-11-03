@@ -1,0 +1,9 @@
+<div class="chart-container" [style.height.px]="height">
+  <canvas #chartCanvas></canvas>
+  @if (loading) {
+  <div class="chart-loading">
+    <div class="loading-spinner"></div>
+    <span>Loading chart data...</span>
+  </div>
+  }
+</div>

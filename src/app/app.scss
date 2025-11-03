@@ -1,0 +1,25 @@
+.app-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.main-tabs {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+  padding: 0;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 48px);
+}
+
+::ng-deep .mat-mdc-tab-group {
+  .mat-mdc-tab-header {
+    background-color: white;
+  }
+
+  .mat-mdc-tab-body-wrapper {
+    background-color: #f5f5f5;
+  }
+}

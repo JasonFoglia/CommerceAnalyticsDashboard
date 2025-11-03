@@ -1,0 +1,132 @@
+<mat-card class="import-card">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>upload_file</mat-icon>
+      Import Sales Data
+    </mat-card-title>
+    <mat-card-subtitle>
+      Upload a CSV file with your sales data to populate the dashboard
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="import-section">
+      <div
+        class="upload-area"
+        [class.dragover]="isDragOver()"
+        (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)"
+        (drop)="onDrop($event)"
+        (click)="fileInput.click()"
+      >
+        @if (isUploading()) {
+        <div class="upload-progress">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          <p>Processing CSV file...</p>
+        </div>
+        } @else {
+        <div class="upload-content">
+          <mat-icon class="upload-icon">cloud_upload</mat-icon>
+          <h3>Drop CSV file here or click to browse</h3>
+          <p>Supported format: CSV with headers</p>
+          <p class="file-info">
+            @if (uploadedFileName()) {
+            <strong>Current file:</strong> {{ uploadedFileName() }}
+            } @else { Maximum file size: 10MB }
+          </p>
+        </div>
+        }
+      </div>
+
+      <input
+        #fileInput
+        type="file"
+        accept=".csv"
+        (change)="onFileSelected($event)"
+        style="display: none"
+      />
+    </div>
+
+    <div class="action-buttons">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="downloadSampleCsv()"
+        [disabled]="isUploading()"
+      >
+        <mat-icon>download</mat-icon>
+        Download Sample CSV
+      </button>
+
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="loadSampleData()"
+        [disabled]="isUploading()"
+      >
+        <mat-icon>preview</mat-icon>
+        Load Sample Data
+      </button>
+
+      <button mat-raised-button color="warn" (click)="clearData()" [disabled]="isUploading()">
+        <mat-icon>clear</mat-icon>
+        Clear Data
+      </button>
+    </div>
+
+    <div class="csv-format-info">
+      <h4>Required CSV Format:</h4>
+      <div class="format-example">
+        <code>
+          id,date,revenue,orders,customerId,productId,productName,category,region<br />
+          order_001,2025-10-01,125.99,1,customer_1001,product_501,Wireless
+          Headphones,Electronics,North America<br />
+          order_002,2025-10-01,89.50,1,customer_1002,product_502,Cotton T-Shirt,Clothing,Europe
+        </code>
+      </div>
+
+      <div class="field-descriptions">
+        <h5>Field Descriptions:</h5>
+        <ul>
+          <li><strong>id:</strong> Unique order identifier</li>
+          <li><strong>date:</strong> Order date (YYYY-MM-DD format)</li>
+          <li><strong>revenue:</strong> Order revenue amount (numeric)</li>
+          <li><strong>orders:</strong> Number of orders (typically 1)</li>
+          <li><strong>customerId:</strong> Unique customer identifier</li>
+          <li><strong>productId:</strong> Unique product identifier</li>
+          <li><strong>productName:</strong> Product display name (optional)</li>
+          <li><strong>category:</strong> Product category</li>
+          <li><strong>region:</strong> Geographic region</li>
+        </ul>
+      </div>
+    </div>
+
+    @if (importStats()) {
+    <div class="import-stats">
+      <h4>Import Results:</h4>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-label">Records Imported:</span>
+          <span class="stat-value">{{ importStats()?.recordsImported || 0 }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Date Range:</span>
+          <span class="stat-value">
+            {{ importStats()?.dateRange || 'N/A' }}
+          </span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Total Revenue:</span>
+          <span class="stat-value">
+            {{ formatCurrency(importStats()?.totalRevenue || 0) }}
+          </span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Unique Products:</span>
+          <span class="stat-value">{{ importStats()?.uniqueProducts || 0 }}</span>
+        </div>
+      </div>
+    </div>
+    }
+  </mat-card-content>
+</mat-card>

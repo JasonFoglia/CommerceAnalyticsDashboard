@@ -1,0 +1,165 @@
+.import-card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.import-section {
+  margin-bottom: 24px;
+}
+
+.upload-area {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+.upload-area:hover {
+  border-color: #3f51b5;
+  background-color: #f5f5f5;
+}
+
+.upload-area.dragover {
+  border-color: #3f51b5;
+  background-color: #e8eaf6;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.upload-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: #666;
+}
+
+.upload-content h3 {
+  margin: 0;
+  color: #333;
+}
+
+.upload-content p {
+  margin: 0;
+  color: #666;
+}
+
+.file-info {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.upload-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.upload-progress p {
+  margin: 0;
+  color: #3f51b5;
+  font-weight: 500;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.csv-format-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.csv-format-info h4,
+.csv-format-info h5 {
+  margin-top: 0;
+  color: #333;
+}
+
+.format-example {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  border-left: 4px solid #3f51b5;
+  margin: 16px 0;
+}
+
+.format-example code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+.field-descriptions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.field-descriptions li {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.import-stats {
+  background-color: #e8f5e8;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+}
+
+.import-stats h4 {
+  margin-top: 0;
+  color: #2e7d32;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #c8e6c9;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: #2e7d32;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .upload-area {
+    padding: 32px 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

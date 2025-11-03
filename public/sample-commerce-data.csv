@@ -1,0 +1,101 @@
+id,date,revenue,orders,customerId,productId,productName,category,region
+order_001,2025-10-01,145.99,1,customer_1001,product_501,Wireless Headphones,Electronics,North America
+order_002,2025-10-01,89.50,1,customer_1002,product_502,Cotton T-Shirt,Clothing,Europe
+order_003,2025-10-01,234.75,1,customer_1003,product_503,Garden Hose Set,Home & Garden,Asia Pacific
+order_004,2025-10-01,67.25,1,customer_1004,product_504,Running Shoes,Sports,North America
+order_005,2025-10-01,29.99,1,customer_1005,product_505,Programming Guide,Books,Europe
+order_006,2025-10-02,189.99,1,customer_1006,product_501,Wireless Headphones,Electronics,Latin America
+order_007,2025-10-02,45.00,1,customer_1007,product_506,Blue Jeans,Clothing,North America
+order_008,2025-10-02,156.80,1,customer_1008,product_507,Kitchen Mixer,Home & Garden,Europe
+order_009,2025-10-02,92.50,1,customer_1009,product_508,Soccer Ball,Sports,Asia Pacific
+order_010,2025-10-02,34.99,1,customer_1010,product_509,Cookbook Collection,Books,North America
+order_011,2025-10-03,299.99,1,customer_1011,product_510,Smartphone,Electronics,Europe
+order_012,2025-10-03,75.00,1,customer_1012,product_511,Wool Sweater,Clothing,Asia Pacific
+order_013,2025-10-03,128.45,1,customer_1013,product_512,Power Drill,Home & Garden,Latin America
+order_014,2025-10-03,199.99,1,customer_1014,product_513,Tennis Racket,Sports,North America
+order_015,2025-10-03,19.99,1,customer_1015,product_514,Mystery Novel,Books,Europe
+order_016,2025-10-04,449.99,1,customer_1016,product_515,Gaming Laptop,Electronics,North America
+order_017,2025-10-04,89.99,1,customer_1017,product_516,Dress Shirt,Clothing,Europe
+order_018,2025-10-04,67.50,1,customer_1018,product_517,Plant Pot Set,Home & Garden,Asia Pacific
+order_019,2025-10-04,134.99,1,customer_1019,product_518,Basketball,Sports,Latin America
+order_020,2025-10-04,24.99,1,customer_1020,product_519,Science Textbook,Books,North America
+order_021,2025-10-05,179.99,1,customer_1021,product_520,Smart Watch,Electronics,Europe
+order_022,2025-10-05,59.99,1,customer_1022,product_521,Summer Dress,Clothing,Asia Pacific
+order_023,2025-10-05,89.99,1,customer_1023,product_522,Garden Shovel,Home & Garden,North America
+order_024,2025-10-05,249.99,1,customer_1024,product_523,Golf Club Set,Sports,Europe
+order_025,2025-10-05,39.99,1,customer_1025,product_524,History Book,Books,Latin America
+order_026,2025-10-06,89.99,1,customer_1026,product_525,Bluetooth Speaker,Electronics,Asia Pacific
+order_027,2025-10-06,119.99,1,customer_1027,product_526,Winter Jacket,Clothing,North America
+order_028,2025-10-06,45.50,1,customer_1028,product_527,Watering Can,Home & Garden,Europe
+order_029,2025-10-06,79.99,1,customer_1029,product_528,Yoga Mat,Sports,Asia Pacific
+order_030,2025-10-06,16.99,1,customer_1030,product_529,Fiction Novel,Books,Latin America
+order_031,2025-10-07,359.99,1,customer_1031,product_530,Tablet Pro,Electronics,North America
+order_032,2025-10-07,149.99,1,customer_1032,product_531,Leather Boots,Clothing,Europe
+order_033,2025-10-07,199.99,1,customer_1033,product_532,Lawn Mower,Home & Garden,Asia Pacific
+order_034,2025-10-07,89.99,1,customer_1034,product_533,Dumbbell Set,Sports,North America
+order_035,2025-10-07,27.99,1,customer_1035,product_534,Art Book,Books,Europe
+order_036,2025-10-08,125.99,1,customer_1036,product_535,Gaming Mouse,Electronics,Latin America
+order_037,2025-10-08,79.99,1,customer_1037,product_536,Polo Shirt,Clothing,Asia Pacific
+order_038,2025-10-08,156.75,1,customer_1038,product_537,Garden Fertilizer,Home & Garden,North America
+order_039,2025-10-08,299.99,1,customer_1039,product_538,Mountain Bike,Sports,Europe
+order_040,2025-10-08,22.99,1,customer_1040,product_539,Travel Guide,Books,Asia Pacific
+order_041,2025-10-09,199.99,1,customer_1041,product_540,4K Webcam,Electronics,North America
+order_042,2025-10-09,65.00,1,customer_1042,product_541,Silk Scarf,Clothing,Europe
+order_043,2025-10-09,89.99,1,customer_1043,product_542,Seed Starter Kit,Home & Garden,Latin America
+order_044,2025-10-09,159.99,1,customer_1044,product_543,Swimming Goggles,Sports,Asia Pacific
+order_045,2025-10-09,31.99,1,customer_1045,product_544,Biography,Books,North America
+order_046,2025-10-10,499.99,1,customer_1046,product_545,4K Monitor,Electronics,Europe
+order_047,2025-10-10,99.99,1,customer_1047,product_546,Athletic Sneakers,Clothing,Asia Pacific
+order_048,2025-10-10,234.50,1,customer_1048,product_547,Hedge Trimmer,Home & Garden,North America
+order_049,2025-10-10,179.99,1,customer_1049,product_548,Electric Skateboard,Sports,Europe
+order_050,2025-10-10,18.99,1,customer_1050,product_549,Poetry Collection,Books,Latin America
+order_051,2025-10-11,399.99,1,customer_1051,product_551,VR Headset,Electronics,North America
+order_052,2025-10-11,129.99,1,customer_1052,product_552,Designer Jeans,Clothing,Europe
+order_053,2025-10-11,89.50,1,customer_1053,product_553,Herb Garden Kit,Home & Garden,Asia Pacific
+order_054,2025-10-11,249.99,1,customer_1054,product_554,Exercise Bike,Sports,Latin America
+order_055,2025-10-11,45.99,1,customer_1055,product_555,Graphic Novel,Books,North America
+order_056,2025-10-12,279.99,1,customer_1056,product_556,Mechanical Keyboard,Electronics,Europe
+order_057,2025-10-12,159.99,1,customer_1057,product_557,Cashmere Sweater,Clothing,Asia Pacific
+order_058,2025-10-12,199.50,1,customer_1058,product_558,Compost Bin,Home & Garden,North America
+order_059,2025-10-12,89.99,1,customer_1059,product_559,Resistance Bands,Sports,Europe
+order_060,2025-10-12,29.99,1,customer_1060,product_560,Self-Help Book,Books,Latin America
+order_061,2025-10-13,149.99,1,customer_1061,product_561,Wireless Charger,Electronics,Asia Pacific
+order_062,2025-10-13,79.99,1,customer_1062,product_562,Cotton Hoodie,Clothing,North America
+order_063,2025-10-13,67.25,1,customer_1063,product_563,Plant Food,Home & Garden,Europe
+order_064,2025-10-13,199.99,1,customer_1064,product_564,Badminton Set,Sports,Asia Pacific
+order_065,2025-10-13,35.99,1,customer_1065,product_565,Recipe Book,Books,Latin America
+order_066,2025-10-14,329.99,1,customer_1066,product_566,Action Camera,Electronics,North America
+order_067,2025-10-14,99.99,1,customer_1067,product_567,Rain Jacket,Clothing,Europe
+order_068,2025-10-14,145.75,1,customer_1068,product_568,Garden Sprinkler,Home & Garden,Asia Pacific
+order_069,2025-10-14,179.99,1,customer_1069,product_569,Foam Roller,Sports,North America
+order_070,2025-10-14,24.99,1,customer_1070,product_570,Adventure Novel,Books,Europe
+order_071,2025-10-15,259.99,1,customer_1071,product_571,Drone,Electronics,Latin America
+order_072,2025-10-15,119.99,1,customer_1072,product_572,Thermal Underwear,Clothing,Asia Pacific
+order_073,2025-10-15,89.99,1,customer_1073,product_573,Bird Feeder,Home & Garden,North America
+order_074,2025-10-15,299.99,1,customer_1074,product_574,Rowing Machine,Sports,Europe
+order_075,2025-10-15,39.99,1,customer_1075,product_575,Philosophy Book,Books,Asia Pacific
+order_076,2025-10-16,189.99,1,customer_1076,product_576,Smart Light Bulbs,Electronics,North America
+order_077,2025-10-16,69.99,1,customer_1077,product_577,Baseball Cap,Clothing,Europe
+order_078,2025-10-16,123.50,1,customer_1078,product_578,Mulch,Home & Garden,Latin America
+order_079,2025-10-16,159.99,1,customer_1079,product_579,Punching Bag,Sports,Asia Pacific
+order_080,2025-10-16,19.99,1,customer_1080,product_580,Comic Book,Books,North America
+order_081,2025-10-17,449.99,1,customer_1081,product_581,Graphics Card,Electronics,Europe
+order_082,2025-10-17,149.99,1,customer_1082,product_582,Evening Dress,Clothing,Asia Pacific
+order_083,2025-10-17,234.25,1,customer_1083,product_583,Pressure Washer,Home & Garden,North America
+order_084,2025-10-17,89.99,1,customer_1084,product_584,Jump Rope,Sports,Europe
+order_085,2025-10-17,32.99,1,customer_1085,product_585,Technical Manual,Books,Latin America
+order_086,2025-10-18,199.99,1,customer_1086,product_586,Portable SSD,Electronics,Asia Pacific
+order_087,2025-10-18,89.99,1,customer_1087,product_587,Track Pants,Clothing,North America
+order_088,2025-10-18,156.75,1,customer_1088,product_588,Greenhouse Kit,Home & Garden,Europe
+order_089,2025-10-18,249.99,1,customer_1089,product_589,Treadmill,Sports,Asia Pacific
+order_090,2025-10-18,27.99,1,customer_1090,product_590,Language Guide,Books,North America
+order_091,2025-10-19,99.99,1,customer_1091,product_591,USB Hub,Electronics,Europe
+order_092,2025-10-19,59.99,1,customer_1092,product_592,Tank Top,Clothing,Latin America
+order_093,2025-10-19,78.50,1,customer_1093,product_593,Garden Hose Reel,Home & Garden,Asia Pacific
+order_094,2025-10-19,199.99,1,customer_1094,product_594,Elliptical Machine,Sports,North America
+order_095,2025-10-19,21.99,1,customer_1095,product_595,Short Stories,Books,Europe
+order_096,2025-10-20,369.99,1,customer_1096,product_596,Sound Bar,Electronics,Asia Pacific
+order_097,2025-10-20,139.99,1,customer_1097,product_597,Leather Jacket,Clothing,North America
+order_098,2025-10-20,189.75,1,customer_1098,product_598,Tool Shed,Home & Garden,Europe
+order_099,2025-10-20,119.99,1,customer_1099,product_599,Yoga Block Set,Sports,Latin America
+order_100,2025-10-20,33.99,1,customer_1100,product_600,Memoir,Books,Asia Pacific
