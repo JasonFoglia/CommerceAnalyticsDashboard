@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --watch=false",
+    "test:watch": "ng test --watch=true",
+    "test:coverage": "ng test --watch=false --code-coverage"
   },
   "prettier": {
     "printWidth": 100,
@@ -22,6 +24,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^20.3.9",
     "@angular/cdk": "^20.2.11",
     "@angular/cdk-experimental": "^20.2.11",
     "@angular/common": "^20.3.0",

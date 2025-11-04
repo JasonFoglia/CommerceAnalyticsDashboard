@@ -1,11 +1,11 @@
-import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import moment from 'moment';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import moment from 'moment';
 import { AnalyticsDataService } from '../../services/analytics-data.service';
 
 @Component({
@@ -155,6 +155,7 @@ export class DataImportComponent {
       error: (error) => {
         console.error('Error loading sample data:', error);
         this.snackBar.open('Error loading sample data', 'Close', { duration: 3000 });
+        this.isUploading.set(false);
       },
       complete: () => {
         this.isUploading.set(false);

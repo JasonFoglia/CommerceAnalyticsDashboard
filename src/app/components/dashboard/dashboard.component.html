@@ -26,10 +26,10 @@
         <mat-card-title>Total Revenue</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div class="metric-value">{{ formatCurrency(metrics.totalRevenue) }}</div>
+        <div class="metric-value">{{ metrics.totalRevenue | currency }}</div>
         <div class="metric-change positive">
           <mat-icon>trending_up</mat-icon>
-          {{ formatPercentage(metrics.periodComparison.revenue) }}
+          {{ metrics.periodComparison.revenue | percent }}
         </div>
       </mat-card-content>
     </mat-card>
@@ -39,10 +39,10 @@
         <mat-card-title>Total Orders</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div class="metric-value">{{ formatNumber(metrics.totalOrders) }}</div>
+        <div class="metric-value">{{ metrics.totalOrders | number }}</div>
         <div class="metric-change positive">
           <mat-icon>trending_up</mat-icon>
-          {{ formatPercentage(metrics.periodComparison.orders) }}
+          {{ metrics.periodComparison.orders | percent }}
         </div>
       </mat-card-content>
     </mat-card>
@@ -52,7 +52,7 @@
         <mat-card-title>Average Order Value</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div class="metric-value">{{ formatCurrency(metrics.averageOrderValue) }}</div>
+        <div class="metric-value">{{ metrics.averageOrderValue | currency }}</div>
         <div class="metric-change neutral">
           <mat-icon>trending_flat</mat-icon>
           0.5%
@@ -65,7 +65,7 @@
         <mat-card-title>Conversion Rate</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div class="metric-value">{{ formatPercentage(metrics.conversionRate) }}</div>
+        <div class="metric-value">{{ metrics.conversionRate | percent }}</div>
         <div class="metric-change positive">
           <mat-icon>trending_up</mat-icon>
           2.1%
@@ -131,10 +131,10 @@
             @for (product of products.slice(0, 10); track product.productId) {
             <div class="table-row">
               <span class="product-name">{{ product.name }}</span>
-              <span>{{ formatCurrency(product.totalRevenue) }}</span>
-              <span>{{ formatNumber(product.totalOrders) }}</span>
-              <span>{{ formatCurrency(product.averageOrderValue) }}</span>
-              <span>{{ formatPercentage(product.conversionRate) }}</span>
+              <span>{{ product.totalRevenue | currency }}</span>
+              <span>{{ product.totalOrders | number }}</span>
+              <span>{{ product.averageOrderValue | currency }}</span>
+              <span>{{ product.conversionRate | percent }}</span>
             </div>
             }
           </div>
@@ -160,17 +160,17 @@
                   [class.positive]="region.growthRate > 0"
                   [class.negative]="region.growthRate < 0"
                 >
-                  {{ formatPercentage(region.growthRate) }}
+                  {{ region.growthRate | percent }}
                 </span>
               </div>
               <div class="region-stats">
                 <div class="stat">
                   <span class="stat-label">Revenue</span>
-                  <span class="stat-value">{{ formatCurrency(region.revenue) }}</span>
+                  <span class="stat-value">{{ region.revenue | currency }}</span>
                 </div>
                 <div class="stat">
                   <span class="stat-label">Orders</span>
-                  <span class="stat-value">{{ formatNumber(region.orders) }}</span>
+                  <span class="stat-value">{{ region.orders | number }}</span>
                 </div>
               </div>
             </div>
@@ -191,20 +191,16 @@
             <div class="segment-item">
               <div class="segment-header">
                 <span class="segment-name">{{ segment.name }}</span>
-                <span class="segment-count"
-                  >{{ formatNumber(segment.customerCount) }} customers</span
-                >
+                <span class="segment-count">{{ segment.customerCount | number }} customers</span>
               </div>
               <div class="segment-metrics">
                 <div class="segment-metric">
                   <span class="metric-label">LTV</span>
-                  <span class="metric-value">{{
-                    formatCurrency(segment.averageLifetimeValue)
-                  }}</span>
+                  <span class="metric-value">{{ segment.averageLifetimeValue | currency }}</span>
                 </div>
                 <div class="segment-metric">
                   <span class="metric-label">Retention</span>
-                  <span class="metric-value">{{ formatPercentage(segment.retentionRate) }}</span>
+                  <span class="metric-value">{{ segment.retentionRate | percent }}</span>
                 </div>
               </div>
               <mat-progress-bar

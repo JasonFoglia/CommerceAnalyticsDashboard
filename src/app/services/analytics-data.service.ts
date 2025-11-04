@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, combineLatest, map, catchError, of } from 'rxjs';
 import moment from 'moment';
+import { BehaviorSubject, Observable, catchError, combineLatest, map, of } from 'rxjs';
 import {
-  SalesData,
-  ProductMetrics,
   CustomerSegment,
-  RegionalPerformance,
   DashboardMetrics,
   FilterOptions,
+  ProductMetrics,
+  RegionalPerformance,
+  SalesData,
   TimeSeriesData,
 } from '../models/analytics.models';
 import { CsvImportService } from './csv-import.service';
@@ -67,7 +67,12 @@ export class AnalyticsDataService {
         filters.dateRange.end.toLocaleString()
       );
 
-      const dateInRange = item.date.isBetween(filters.dateRange.start, filters.dateRange.end);
+      const dateInRange = item.date.isBetween(
+        filters.dateRange.start,
+        filters.dateRange.end,
+        null,
+        '[]'
+      );
 
       const regionMatch = filters.regions.length === 0 || filters.regions.includes(item.region);
       const categoryMatch =
@@ -129,15 +134,45 @@ export class AnalyticsDataService {
   private calculateCustomerSegments(data: SalesData[]): CustomerSegment[] {
     // Simplified customer segmentation
     const segments = ['High Value', 'Regular', 'New Customer', 'At Risk'];
+    const highValue = data.filter((item) => item.revenue >= 200);
+    const regular = data.filter((item) => item.revenue >= 10 && item.revenue < 200);
+    const newCustomer = data.filter((item) => item.revenue < 10 && item.revenue > 0);
+    const atRisk = data.filter((item) => item.revenue === 0);
 
-    return segments.map((segment, index) => ({
-      segmentId: `segment_${index}`,
-      name: segment,
-      customerCount: Math.floor(Math.random() * 1000) + 100,
-      totalRevenue: Math.floor(Math.random() * 100000) + 10000,
-      averageLifetimeValue: Math.floor(Math.random() * 5000) + 500,
-      retentionRate: Math.random() * 0.3 + 0.6,
-    }));
+    return segments.map((segment, index) => {
+      let segmentData: SalesData[] = data;
+
+      switch (segment) {
+        case 'High Value':
+          segmentData = highValue;
+          break;
+        case 'Regular':
+          segmentData = regular;
+          break;
+        case 'New Customer':
+          segmentData = newCustomer;
+          break;
+        case 'At Risk':
+          segmentData = atRisk;
+          break;
+      }
+
+      return {
+        segmentId: `segment_${index}`,
+        name: segment,
+        customerCount: new Set(segmentData.map((item) => item.customerId)).size,
+        totalRevenue: segmentData.reduce((sum, item) => sum + item.revenue, 0),
+        averageLifetimeValue:
+          segmentData.length > 0
+            ? segmentData.reduce((sum, item) => sum + item.revenue, 0) /
+              new Set(segmentData.map((item) => item.customerId)).size
+            : 0,
+        retentionRate:
+          segmentData.length > 0
+            ? segmentData.length / new Set(segmentData.map((item) => item.customerId)).size
+            : 0,
+      };
+    });
   }
 
   private calculateRegionalPerformance(data: SalesData[]): RegionalPerformance[] {

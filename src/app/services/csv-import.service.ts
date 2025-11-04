@@ -218,6 +218,17 @@ export class CsvImportService {
         'Books',
         'Europe',
       ],
+      [
+        'order_006',
+        '2025-10-06',
+        '29.99',
+        '1',
+        'customer_1005',
+        'product_505',
+        'Programming Book',
+        'Books',
+        'Europe',
+      ],
     ];
 
     const csvContent = [headers.join(','), ...sampleRows.map((row) => row.join(','))].join('\n');
