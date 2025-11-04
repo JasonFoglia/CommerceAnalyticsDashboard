@@ -227,7 +227,7 @@ export class AnalyticsDataService {
   // Load sample data from assets
   private loadSampleDataFromAssets(): void {
     this.csvImportService
-      .loadSalesDataFromCsv('/assets/sample-sales-data.csv')
+      .loadSalesDataFromCsv('~/assets/sample-sales-data.csv')
       .pipe(
         catchError((error) => {
           console.warn('Failed to load sample data from assets, using empty dataset:', error);
