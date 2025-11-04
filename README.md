@@ -40,7 +40,7 @@ A high-performance Angular-based commerce analytics dashboard with virtualized c
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22+
 - npm or yarn
 - Angular CLI
 
@@ -132,6 +132,10 @@ Current performance achievements:
 - **<100ms** initial chart render time
 - **60 FPS** smooth animations and interactions
 - **Optimized bundle size** with tree shaking
+
+## GitHub Actions
+
+- Utilizes GitHub Actions for Build Pipeline and Deployment to GitHub Pages
 
 ## Additional Resources
 

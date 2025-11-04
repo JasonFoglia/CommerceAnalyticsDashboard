@@ -1,12 +1,14 @@
+import { provideHttpClient } from '@angular/common/http';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { App } from './app';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
-      providers: [provideZonelessChangeDetection()]
+      providers: [provideHttpClient(), provideZonelessChangeDetection(), provideAnimations()],
     }).compileComponents();
   });
 
@@ -16,10 +18,15 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', () => {
+  it('should render app content', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, commerce-analytics-dashboard');
+    // Check for app container div
+    expect(compiled.querySelector('.app-container')).toBeTruthy();
+    // Check for tab group (rendered after Angular Material components are processed)
+    expect(
+      compiled.querySelector('mat-tab-group') || compiled.textContent?.includes('Data Import')
+    ).toBeTruthy();
   });
 });

@@ -70,27 +70,6 @@ export class DashboardComponent implements OnInit {
     // Component initialization
   }
 
-  formatCurrency(value: number): string {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(value);
-  }
-
-  formatNumber(value: number): string {
-    return new Intl.NumberFormat('en-US').format(value);
-  }
-
-  formatPercentage(value: number): string {
-    return new Intl.NumberFormat('en-US', {
-      style: 'percent',
-      minimumFractionDigits: 1,
-      maximumFractionDigits: 1,
-    }).format(value);
-  }
-
   onDateRangeChange(dateRange: string) {
     // Handle date range change - convert string to proper date range format
     const now = moment();
