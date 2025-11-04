@@ -143,7 +143,7 @@ export class DataImportComponent {
     this.isUploading.set(true);
 
     // Load from the assets sample data
-    this.analyticsService.importSalesDataFromCsv('/assets/sample-sales-data.csv').subscribe({
+    this.analyticsService.importSalesDataFromCsv('assets/sample-sales-data.csv').subscribe({
       next: (data) => {
         const stats = this.calculateImportStats(data);
         this.importStats.set(stats);
