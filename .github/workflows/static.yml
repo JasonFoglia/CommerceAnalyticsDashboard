@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload the Angular build output
-          path: './dist/commerce-analytics-dashboard'
+          path: './dist/commerce-analytics-dashboard/browser'
 
       - name: Deploy to GitHub Pages
         id: deployment
